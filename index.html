@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatitos Aleatorios</title>
+    <style>
+
+        aside {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #error {
+            display: block;
+            background: rgb(243, 178, 178);
+            color: red;
+        }
+
+        .contenedor-img {
+            width: 90%;
+            height: 50vh;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        article {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3rem;
+        }
+
+        #img1,
+        #img2,
+        #img3 {
+            max-height: 40vh;
+            display: inline-block;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        #btn_gatos {
+            display: block;
+            margin: auto;
+            padding: 5px;
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            background: rgb(20, 165, 175);
+            text-align: center;
+            color: #fff;
+        }
+
+        #btn_gatos_favorourites {
+            display: block;
+            margin: auto;
+            padding: 5px;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            background: rgb(20, 165, 175);
+            text-align: center;
+            color: #fff;
+        }
+
+        #favoritesMichis{
+            width: 100%;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #favoritesMichis h2 {
+            display: inline-block;
+            width: 100%;
+        }
+
+        form {
+            width: 50%;
+        }
+
+        form input {
+            margin: 10px;
+        }
+
+        form img {
+            display: block;
+            width: 80%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <h1>Michis App</h1>
+
+    <div id="error"></div>
+
+    <section id="randomMichis" class="contenedor-img">
+
+        <aside>
+            <h2>Gatitos aleatorios</h2>
+            <button type="button" id="btn_gatos">Cargar nueva imagen</button>
+
+        </aside>
+        <article>
+            <img id="img1" alt="Foto gatito aleatorio">
+            <button id="btn1"">Guardar michi en favoritos</button>
+        </article>
+        
+        <article>
+            <img id="img2" alt="Foto gatito aleatorio">
+            <button id="btn2"">Guardar michi en favoritos</button>
+        </article>
+        
+    </section>
+    
+    <section id="uploadingMichi">
+        <h2>Sube la foto de tu michi</h2>
+
+        <form id="uploadingForm">
+            <input id="file" type="file" onchange="cargarImgPrev()" name="file">
+            <img id="img" src="https://img.favpng.com/1/21/23/computer-icons-cloud-computing-upload-cloud-storage-symbol-png-favpng-xAYSGKPahKdq5jVGddZJy1Xgm.jpg" alt="">
+            <button type="button" onclick="uploadMichiPhoto()">Subir foto de michi</button>
+        </form>
+    </section>
+
+    <section id="favoritesMichis">
+    </section>
+
+    <script defer src="main.js"></script>
+</body>
+</html>
